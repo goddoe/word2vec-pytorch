@@ -113,5 +113,7 @@ if __name__ == '__main__':
                         verbose_iterval=p.verbose_iterval)
     print("train end")
 
-    visualize(result_dict, p.dim_reduction_type)
+    print("p.vis: {}, {}".format(type(p.vis), p.vis))
+    if p.vis:
+        visualize(result_dict, p.dim_reduction_type)
 

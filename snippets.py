@@ -23,11 +23,16 @@ This were to be new made when thou art old,
 And see thy blood warm when thou feel'st it cold."""
 
 # Load data
-wcd = WordContextDataset(corpus=tiny_corpus,
+# wcd = WordContextDataset(corpus=tiny_corpus,
+#                          context_size=2,
+#                          min_word=1)
+
+wcd = WordContextDataset(corpus_path="./data/alice.txt",
                          context_size=2,
                          min_word=1)
 
-data_loader = DataLoader(wcd, batch_size=16, shuffle=True)
+
+data_loader = DataLoader(wcd, batch_size=128, shuffle=True)
 
 # Model
 cbow = CBOW(vocab_size=wcd.vocab_size,
@@ -56,9 +61,10 @@ for epoch_i in range(n_epoch):
         loss = loss_fn(pred_log_prob, Y)
 
         loss.backward()
-        loss_list.append(loss.to('cpu').data.numpy())
+        loss_list.append(float(loss.to('cpu').data.numpy()))
 
         optimizer.step()
+    print("loss : {}".format(loss))
 
 
 # ======================================
