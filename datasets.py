@@ -5,8 +5,11 @@ from torch.utils.data import Dataset
 def _get_word_cnt_dict(corpus):
     """Counts words in corpus.
 
-    Attributes:
+    Args:
         corpus (str): full text.
+
+    Returns:
+        dict, dict of word count.
     """
     word_cnt_dict = {}
     for word in corpus:
