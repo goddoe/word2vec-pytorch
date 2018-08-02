@@ -36,8 +36,8 @@ optional arguments:
 ```
 
 ## TODO
-[x] CBOW
-[ ] Skip-gram
+- [x] CBOW
+- [ ] Skip-gram
 
 
 
