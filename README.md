@@ -1,6 +1,6 @@
 # Word2Vec Implementation with PyTorch 
 
-(Working...)
+Simple implementation of word2vec with pytorch
 
 ## Usage
 ```
@@ -34,3 +34,10 @@ optional arguments:
   --dim_reduction_type DIM_REDUCTION_TYPE
                         Interval for print loss.
 ```
+
+## TODO
+[x] CBOW
+[ ] Skip-gram
+
+
+
